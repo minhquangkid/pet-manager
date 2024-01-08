@@ -6,6 +6,12 @@ act.addEventListener("click", function (e) {
   //   console.log(e.target);
   act.classList.toggle("active");
 });
+const listNav = document.querySelector(".listNav");
+
+listNav.addEventListener("click", function (e) {
+  console.log(e.target);
+  event.stopPropagation();
+});
 //// khởi tạo lại giá trị ban đầu
 const submitBtn = document.getElementById("submit-btn");
 const idInput = document.getElementById("input-id");

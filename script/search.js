@@ -6,6 +6,12 @@ act.addEventListener("click", function (e) {
   //   console.log(e.target);
   act.classList.toggle("active");
 });
+const listNav = document.querySelector(".listNav");
+
+listNav.addEventListener("click", function (e) {
+  console.log(e.target);
+  event.stopPropagation();
+});
 /////
 const submitBtn = document.getElementById("submit-btn"); // các biến này ko sử dụng chung cho các file js được, phải khai báo lại từ đầu
 const btnFind = document.getElementById("find-btn");

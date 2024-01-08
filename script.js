@@ -42,7 +42,7 @@ function healthyArr() {
 
 // các hàm chèn dữ liệu vào bảng
 function renderTableData(pets) {
-  tableBodyEl.innerHTML = "";
+  tableBodyEl.innerHTML = ""; // làm rỗng hết dữ liệu cũ
 
   pets.forEach((pet) => {
     //
@@ -201,7 +201,7 @@ submitBtn.addEventListener("click", function () {
 
 // event xóa thông tin khi nhấn nút delete
 tableBodyEl.addEventListener("click", function (e) {
-  // console.log(e.target.id);
+  console.log(e.target);
   if (e.target.id != "btn-delete") return;
 
   const petId = e.target.getAttribute("data-id");
@@ -285,8 +285,15 @@ healthy.addEventListener("click", function () {
 const act = document.querySelector("#sidebar");
 
 act.addEventListener("click", function (e) {
-  //   console.log(e.target);
+  console.log(e.target);
   act.classList.toggle("active");
+});
+
+const listNav = document.querySelector(".listNav");
+
+listNav.addEventListener("click", function (e) {
+  console.log(e.target);
+  event.stopPropagation();
 });
 
 // sự kiện thay đổi type
@@ -305,7 +312,8 @@ const renderBreed = function () {
     loc = arr.filter((e) => e.type == "Cat");
   }
   loc.forEach(function (e) {
-    const option = document.createElement("option"); // không hiểu vì sao đặt ở trong thì không bị lỗi
+    const option = document.createElement("option");
+
     option.innerHTML = e.input;
 
     breedInput.appendChild(option);

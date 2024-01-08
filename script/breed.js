@@ -5,6 +5,13 @@ act.addEventListener("click", function (e) {
   act.classList.toggle("active");
 });
 
+const listNav = document.querySelector(".listNav");
+
+listNav.addEventListener("click", function (e) {
+  console.log(e.target);
+  event.stopPropagation();
+});
+
 //lấy ra các DOM Element mình cần sử dụng
 const submitBtnBreed = document.getElementById("submit-btn");
 const breedInput = document.getElementById("input-breed"); //
